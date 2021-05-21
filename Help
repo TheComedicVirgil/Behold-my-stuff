@@ -1,0 +1,60 @@
+onEvent("leftButton", "click", function() {
+  setScreen("leftScreen");
+  playSound("sound://default.mp3", false);
+});
+onEvent("RightButton", "click", function(){
+setScreen("rightScreen");
+});
+onEvent("Dontclick", "click", function(){
+playSound("sound://category_alerts/comedy_game_over_1.mp3");
+setScreen("puzzle");
+});
+onEvent("startScreen", "click", function( ) {
+	console.log("startScreen clicked!");
+});
+onEvent("slider1", "change", function(){
+if (getProperty("slider1", "value") == 2) {
+  sliderValue1 = 2;
+}
+});
+onEvent("slider2", "change", function(){
+if (getProperty("slider2", "value") == 0) {
+  sliderValue2 = 0;
+}
+});
+onEvent("slider3", "change", function(){
+if (getProperty("slider3", "value") == 3) {
+  sliderValue3 = 3;
+}
+});
+onEvent("slider4", "change", function(){
+if (getProperty("slider4", "value") == 1) {
+  sliderValue4 = 1;
+}
+});
+if ((sliderValue1 == 2) + ((sliderValue2 == 0) + ((sliderValue3 == 3) + (sliderValue4 == 1)))) {
+  onEvent("check", "click", function(){
+  yesorno = 1;
+  });
+}
+if (yesorno == 1) {
+  onEvent("done", "click", function(){
+  setScreen("startScreen");
+  });
+}
+if (yesorno == 0) {
+  onEvent("done", "click", function(){
+  setScreen("puzzle");
+  });
+}
+var sliderValue1 = "sliderValue1";
+var sliderValue1 = 9;
+var sliderValue2 = "sliderValue2";
+var sliderValue2 = 9;
+var sliderValue3 = "sliderValue3";
+var sliderValue3 = 9;
+var sliderValue4 = "sliderValue4";
+var sliderValue4 = 9;
+var yesorno = "yesorno";
+var yesorno = 0;
+
